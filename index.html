@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC SEO -->
+  <meta charset="UTF-8" />
+  <title>donsri | Business Consulting & Solutions</title>
+  <meta name="description" content="donsri is a business consulting and solutions firm helping entrepreneurs, creators, and small teams grow faster, operate cleaner, and tell a clearer story.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="donsri" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- SOCIAL (OG) -->
+  <meta property="og:title" content="donsri | Business Consulting & Solutions">
+  <meta property="og:description" content="Strategy. Systems. Story. A lightweight consulting studio for ambitious founders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/donsri/">
+  <meta property="og:image" content="https://your-github-username.github.io/donsri/og-image.png">
+
+  <!-- STYLES (INLINE SO IT'S 1 FILE) -->
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(9, 12, 21, 0.7);
+      --accent: #06b6d4;
+      --accent-soft: rgba(6, 182, 212, 0.12);
+      --text: #f9fafb;
+      --muted: #94a3b8;
+      --radius-lg: 1.25rem;
+      --shadow: 0 20px 45px rgba(0,0,0,0.25);
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0%, #020617 60%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      display: flex;
+      gap: .4rem;
+      align-items: center;
+    }
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+      margin-left: 1.5rem;
+      opacity: .8;
+    }
+    .hero {
+      max-width: var(--max);
+      margin: 3.5rem auto 3rem;
+      padding: 0 1.25rem;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      gap: .35rem;
+      align-items: center;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      border-radius: 999px;
+      padding: .3rem .7rem .35rem;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: clamp(2.35rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .lead {
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 1.25rem;
+    }
+    .actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+      border: none;
+      padding: .7rem 1.3rem .8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 18px 35px rgba(6, 182, 212, 0.35);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(148, 163, 184, .35);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .7rem 1.3rem .8rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card {
+      background: radial-gradient(circle at 0 0, rgba(6, 182, 212, .07), rgba(2,6,23,1) 45%);
+      border: 1px solid rgba(148, 163, 184, .25);
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .metric {
+      background: rgba(2,6,23,0.35);
+      border: 1px solid rgba(248,250,252,0.02);
+      border-radius: 1.2rem;
+      padding: .75rem 1rem;
+    }
+    .metric .big {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      margin-bottom: .75rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+    .service {
+      background: rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.1rem 1.05rem;
+    }
+    .service h3 {
+      margin: 0 0 .5rem;
+      font-size: 1.05rem;
+    }
+    .service p {
+      margin: 0 0 .65rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      padding: 1.5rem 1.25rem 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+    @media (max-width: 930px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav a.hide-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <span class="logo-dot"></span> donsri
+      </div>
+      <div>
+        <a href="#services" class="hide-mobile">Services</a>
+        <a href="#work" class="hide-mobile">Selected work</a>
+        <a href="#contact" class="btn-secondary">Book a call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">Business consulting & solutions</div>
+        <h1>Strategy, systems, and story for businesses that want to move faster.</h1>
+        <p class="lead">
+          donsri helps founders and small teams tighten their offer, sharpen their messaging, and put in lean ops so they can grow without chaos.
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn-primary">Work with donsri</a>
+          <a href="#work" class="btn-secondary">View portfolio</a>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h2 style="margin-top:0;">Quick profile</h2>
+          <p style="color:var(--muted);font-size:.87rem;">Consulting studio focused on clarity, efficiency, and results.</p>
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="big">+120</div>
+              <div style="font-size:.7rem;color:var(--muted);">Projects advised</div>
+            </div>
+            <div class="metric">
+              <div class="big">$5.2M</div>
+              <div style="font-size:.7rem;color:var(--muted);">Client growth influenced</div>
+            </div>
+            <div class="metric">
+              <div class="big">10+ yrs</div>
+              <div style="font-size:.7rem;color:var(--muted);">XP in operations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2 class="section-title">What donsri does</h2>
+      <p style="color:var(--muted);max-width:48rem;margin-bottom:1.1rem;">
+        Start with what moves the needle. These are the consulting streams most teams pick first.
+      </p>
+      <div class="services">
+        <div class="service">
+          <h3>1. Business & offer clarity</h3>
+          <p>Positioning, audience targeting, pricing, and packaging so people understand you instantly.</p>
+          <p style="font-size:.75rem;color:var(--accent);">Deliverables: 1-page strategy, ICP, offer stack</p>
+        </div>
+        <div class="service">
+          <h3>2. Systems & workflow</h3>
+          <p>Map your processes, automate repeatables, and reduce admin time across tools.</p>
+          <p style="font-size:.75rem;color:var(--accent);">Deliverables: SOPs, automations, tooling recs</p>
+        </div>
+        <div class="service">
+          <h3>3. Marketing presence</h3>
+          <p>Clean landing pages, messaging, and content hooks that make you look legit online.</p>
+          <p style="font-size:.75rem;color:var(--accent);">Deliverables: landing page, copy, CTAs</p>
+        </div>
+        <div class="service">
+          <h3>4. Advisory / fractional</h3>
+          <p>Ongoing guidance for founders that want a strategist on call, not a full-time hire.</p>
+          <p style="font-size:.75rem;color:var(--accent);">Deliverables: monthly sessions & reports</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <h2 class="section-title">Selected work / portfolio</h2>
+      <p style="color:var(--muted);margin-bottom:1rem;">Replace these with your real projects.</p>
+      <div class="services">
+        <div class="service">
+          <h3>Consulting for health research group</h3>
+          <p>Helped clarify digital presence, create outreach assets, and streamline reporting.</p>
+          <p style="font-size:.7rem;color:var(--muted);">Impact: faster decision-making, better comms.</p>
+        </div>
+        <div class="service">
+          <h3>Ops tune-up for coaching business</h3>
+          <p>Documented core process, created proposal templates, improved client onboarding.</p>
+          <p style="font-size:.7rem;color:var(--muted);">Impact: fewer errors, happier clients.</p>
+        </div>
+        <div class="service">
+          <h3>Landing page for digital agency</h3>
+          <p>Single-page site focused on offer clarity & authority. SEO-ready.</p>
+          <p style="font-size:.7rem;color:var(--muted);">Impact: stronger first impression.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2 class="section-title">Book a call</h2>
+      <p style="color:var(--muted);margin-bottom:1rem;">
+        Send me a short note and I’ll get back to you within 1 business day.
+      </p>
+      <!-- For GitHub Pages we can't do server-side, so use mailto -->
+      <a class="btn-primary" href="mailto:hello@donsri.co?subject=Consulting%20inquiry%20from%20site&body=Tell%20me%20about%20your%20business:">
+        Email donsri
+      </a>
+      <p style="color:var(--muted);margin-top:.75rem;font-size:.78rem;">
+        Or connect: LinkedIn / Instagram / GitHub (add your links in the code).
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> donsri. Built on GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
